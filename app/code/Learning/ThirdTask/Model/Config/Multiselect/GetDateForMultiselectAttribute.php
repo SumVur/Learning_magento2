@@ -4,7 +4,10 @@ namespace Learning\ThirdTask\Setup\Model\Config\Multiselect;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
-
+/**
+ * Class GetDateForMultiselectAttribute
+ * @package Learning\ThirdTask\Setup\Model\Config\Multiselect
+ */
 class GetDateForMultiselectAttribute extends AbstractSource
 {
     /**

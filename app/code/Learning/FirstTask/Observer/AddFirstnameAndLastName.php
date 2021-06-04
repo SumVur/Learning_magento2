@@ -1,6 +1,6 @@
 <?php
 
-namespace Learning\FirstUnit\Observer;
+namespace Learning\FirstTask\Observer;
 
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\Request\Http;
