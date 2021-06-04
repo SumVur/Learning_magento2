@@ -1,0 +1,9 @@
+<config>
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="BeforeSetNamePlugin" type="Learning\FifthTask\Plugin\BeforeSetNamePlugin" sortOrder="1" />
+        <plugin name="AfterGetPricePlugin" type="Learning\FifthTask\Plugin\AfterGetPricePlugin" sortOrder="2" />
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product">
+        <plugin name="AroundProductSavePlugin" type="Learning\FifthTask\Plugin\AroundProductSavePlugin" sortOrder="3" />
+    </type>
+</config>
