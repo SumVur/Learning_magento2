@@ -35,13 +35,13 @@ class AttrTypeMultiselect implements DataPatchInterface
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
         $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, 'attr_type_multiselect', [
-            'type' => 'text',
+            'type' => 'varchar',
             'backend' => '',
             'frontend' => '',
             'label' => 'Multiselect Attribute',
             'input' => 'multiselect',
             'class' => '',
-            'source' => 'Learning\ThirdTask\Setup\Model\Config\Multiselect\GetDateForMultiselectAttribute',
+            'source' => \Learning\ThirdTask\Model\Config\Multiselect\GetDateForMultiselectAttribute::class,
             'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
             'visible' => true,
             'required' => true,

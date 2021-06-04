@@ -35,7 +35,7 @@ class AttrTypeSelect implements DataPatchInterface
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
         $eavSetup->addAttribute(\Magento\Catalog\Model\Product::ENTITY, 'attr_type_select', [
-            'type' => 'int',
+            'type' => 'varchar',
             'backend' => '',
             'frontend' => '',
             'label' => 'Enable Color',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Learning\ThirdTask\Setup\Model\Config\Multiselect;
+namespace Learning\ThirdTask\Model\Config\Multiselect;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 
@@ -10,6 +10,7 @@ use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
  */
 class GetDateForMultiselectAttribute extends AbstractSource
 {
+
     /**
      * @return array|array[]
      */
