@@ -1,10 +1,3 @@
-Third Task
-![SecondTask](ThirdTask.jpg)
-
-
-Для добавления атрибутов будет использовать классы, которые будут  implements DataPatchInterface, для каждого реализуем свой класс, со своей структурой <br/>
-* [1) Тип текста attr_type_text](Setup/Patch/Data/AttrTypeText.php)
-* [2) Тип текста  attr_type_select](Setup/Patch/Data/AttrTypeSelect.php)
-* [2) Тип текста  attr_type_multiselect](Setup/Patch/Data/AttrTypeMultiselect.php)
-    * [2.1) Создадим class который будет предоставлять нам данные для Multiselect](Model/Config/Multiselect/GetDateForMultiselectAttribute.php)
-
+1. Ссоздать кастомную еаv модель (сущность) mdg_entity
+2. Дать возможность добавления еаv атрибутов к этой сущности так же как это возможно для категории продукта кастомера и тд
+3. Сделать возможным получения значений этих атрибутов из модели сущности
