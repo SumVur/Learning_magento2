@@ -4,7 +4,7 @@
         <referenceBlock name="top.links">
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-head-custom">
                 <arguments>
-                    <argument name="path" xsi:type="string">sixthtask/customer/rvp</argument>
+                    <argument name="path" xsi:type="string">sixthtask/customer/RecentlyViewedProduct</argument>
                     <argument name="label" xsi:type="string">Recently Viewed Product</argument>
                 </arguments>
             </block>
