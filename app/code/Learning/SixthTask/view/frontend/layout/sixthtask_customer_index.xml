@@ -7,7 +7,15 @@
             </action>
         </referenceBlock>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="my_tab" template="Learning_SixthTask::mytab.phtml">
+            <block class="Magento\Catalog\Block\Widget\RecentlyViewed" name="recently_viewed" template="Magento_Catalog::product/widget/viewed/grid.phtml" after="-">
+                <arguments>
+                    <argument name="uiComponent" xsi:type="string">widget_recently_viewed</argument>
+                    <argument name="page_size" xsi:type="number">8</argument>
+                    <!-- 'Product attributes to show' configuration -->
+                    <argument name="show_attributes" xsi:type="string">name,image,price,learn_more</argument>
+                    <!-- 'Buttons to show' configuration -->
+                    <argument name="show_buttons" xsi:type="string">add_to_cart,add_to_compare,add_to_wishlist</argument>
+                </arguments>
             </block>
         </referenceContainer>
     </body>
