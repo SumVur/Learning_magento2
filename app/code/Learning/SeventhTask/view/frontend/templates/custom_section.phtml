@@ -1,0 +1,19 @@
+<div class="aureatelabs-custom-section" data-bind="scope: 'customer'">
+    <span data-bind="text: customer().Street"></span> <br>
+    <span data-bind="text: customer().Country"></span> <br>
+    <span data-bind="text: customer().Region"></span> <br>
+    <span data-bind="text: customer().City"></span> <br>
+</div>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Learning_SeventhTask/js/section"
+                        }
+                    }
+                }
+            }
+        }
+</script>
