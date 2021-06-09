@@ -10,7 +10,6 @@ use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
  */
 class GetDateForMultiselectAttribute extends AbstractSource
 {
-
     /**
      * @return array|array[]
      */
