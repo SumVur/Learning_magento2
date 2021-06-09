@@ -75,7 +75,6 @@ class Test
             $productCollection = $this->productCollectionFactory->create()->addIdFilter($productIds);
             $productCollection->addAttributeToSelect('name');
 
-
             foreach ($productCollection as $product) {
                 /** @var ProductInterface $product **/
                 $data = [];
