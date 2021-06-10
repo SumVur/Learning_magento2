@@ -67,14 +67,14 @@ class CLIMenger
      */
     private function GetUsersRegisteredInLast24Hours(): array
     {
-        $Users = $this->customerFactory->create()
+        $users = $this->customerFactory->create()
             ->addAttributeToFilter('created_at',
                 [
                     'from' => date('Y-m-d h:i:s \G\M\T', mktime(0, 0, 0, date('m'), date('d') - 1, date('Y'))),
                     'to' => gmdate('Y-m-d h:i:s \G\M\T'),
                 ]);
         $resultUsers = [];
-        foreach ($Users as $User) {
+        foreach ($users as $User) {
             /** @var CustomerInterface $User */
             $resultUsers[] = [
                 "firstname" => $User->getFirstname(),
@@ -98,7 +98,8 @@ class CLIMenger
         $Users = $this->onlineCollectionFactory->create();
 
         $resultUsers = [];
-        foreach ($Users as $User) {
+        foreach ($Users as $User)
+        {
             /** @var CustomerInterface $User */
             $resultUsers[] = [
                 "firstname" => $User->getFirstname(),
@@ -106,7 +107,8 @@ class CLIMenger
                 "email" => $User->getEmail()
             ];
         }
-        if (empty($resultUsers)) {
+        if (empty($resultUsers))
+        {
             $resultUsers = [
                 "Info" => "No Online users",
             ];
@@ -121,21 +123,24 @@ class CLIMenger
     private function GetLockedUsers(): array
     {
 
-        $Users = $this->customerFactory->create();
+        $users = $this->customerFactory->create();
         $resultUsers = [];
-        foreach ($Users as $User) {
-            /** @var CustomerInterface $User */
-            if ($User->isCustomerLocked()) {
-                $LockExpires = new \DateTime($User->getLockExpires());
+        foreach ($users as $user) {
+            /** @var CustomerInterface $user */
+            if ($user->isCustomerLocked())
+            {
+                $LockExpires = new \DateTime($user->getLockExpires());
+
                 $resultUsers[] = [
-                    "firstname" => $User->getFirstname(),
-                    "lastname" => $User->getLastname(),
-                    "email" => $User->getEmail(),
+                    "firstname" => $user->getFirstname(),
+                    "lastname" => $user->getLastname(),
+                    "email" => $user->getEmail(),
                     "Lock Expires" => $LockExpires->format('j-M-Y :T')
                 ];
             }
         }
-        if (empty($resultUsers)) {
+        if (empty($resultUsers))
+        {
             $resultUsers = [
                 "Info" => "No locked users",
             ];

@@ -54,22 +54,33 @@ class TaskCommands extends Command
 
     private function ParseAnswer($answer, OutputInterface $output)
     {
-        if (!empty($answer)) {
+        if (!empty($answer))
+        {
             $table = new Table($output);
-            if (array_key_exists("Info", $answer)) {
+
+            if (array_key_exists("Info", $answer))
+            {
                 $output->writeln(sprintf("<comment> %s </comment>", $answer["Info"]));
-            } else {
-                $Headers = [];
-                foreach ($answer as $line) {
-                    $Headers = array_merge($Headers, array_keys($line));
+            }
+            else
+            {
+                $headers = [];
+
+                foreach ($answer as $line)
+                {
+                    $headers = array_merge($headers, array_keys($line));
                 }
-                $Headers = array_unique($Headers);
-                $table->setHeaders($Headers);
+
+                $headers = array_unique($headers);
+                $table->setHeaders($headers);
 
                 $rowNumber = 0;
-                foreach ($answer as $line) {
+
+                foreach ($answer as $line)
+                {
                     $row = [];
-                    foreach ($Headers as $column) {
+                    foreach ($headers as $column)
+                    {
                         $row = array_merge($row, [array_key_exists($column, $line) ? $line[$column] : "----"]);
                     }
                     $table->setRow($rowNumber, $row);
