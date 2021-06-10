@@ -1,28 +1,29 @@
 <?php
+
 namespace Learning\NinthTask\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
-use function Safe\swoole_async_write;
+use Symfony\Component\Console\Helper\Table;
+use Learning\NinthTask\Model\CLIMenger as CLIMenger;
 
 /**
  * Class SomeCommand
  */
 class TaskCommands extends Command
 {
-    private $CLIMeneger;
+    private CLIMenger $CLIMenger;
 
 
     public function __construct(
-        \Learning\NinthTask\Model\CLIMeneger $CLIManeger,
+        CLIMenger $CLIMenger,
         string $name = null
     )
     {
         parent::__construct($name);
-        $this->CLIMeneger = $CLIManeger;
+        $this->CLIMenger = $CLIMenger;
     }
 
     /**
@@ -48,11 +49,34 @@ class TaskCommands extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $text = $input->getArgument('Option');
-        method_exists($this->CLIMeneger,$text);
-        if(method_exists($this->CLIMeneger,$text))
-        {
-            $this->CLIMeneger->{$text};
-        }
+        $this->ParseAnswer($this->CLIMenger->CommandManger($text), $output);
+    }
 
+    private function ParseAnswer($answer, OutputInterface $output)
+    {
+        if (!empty($answer)) {
+            $table = new Table($output);
+            if (array_key_exists("Info", $answer)) {
+                $output->writeln(sprintf("<comment> %s </comment>", $answer["Info"]));
+            } else {
+                $Headers = [];
+                foreach ($answer as $line) {
+                    $Headers = array_merge($Headers, array_keys($line));
+                }
+                $Headers = array_unique($Headers);
+                $table->setHeaders($Headers);
+                $rowNumber = 0;
+                foreach ($answer as $line) {
+                    $row = [];
+                    foreach ($Headers as $column) {
+                        $row = array_merge($row, [array_key_exists($column, $line) ? $line[$column] : "----"]);
+                    }
+                    $table->setRow($rowNumber, $row);
+                    $rowNumber++;
+                }
+                $table->render();
+            }
+
+        }
     }
 }
