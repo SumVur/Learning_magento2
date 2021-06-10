@@ -65,6 +65,7 @@ class TaskCommands extends Command
                 }
                 $Headers = array_unique($Headers);
                 $table->setHeaders($Headers);
+
                 $rowNumber = 0;
                 foreach ($answer as $line) {
                     $row = [];
