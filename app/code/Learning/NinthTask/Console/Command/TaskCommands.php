@@ -52,6 +52,10 @@ class TaskCommands extends Command
         $this->ParseAnswer($this->CLIMenger->CommandManger($text), $output);
     }
 
+    /**
+     * @param $answer
+     * @param OutputInterface $output
+     */
     private function ParseAnswer($answer, OutputInterface $output)
     {
         if (!empty($answer))
@@ -88,7 +92,6 @@ class TaskCommands extends Command
                 }
                 $table->render();
             }
-
         }
     }
 }

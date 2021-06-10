@@ -122,7 +122,6 @@ class CLIMenger
      */
     private function GetLockedUsers(): array
     {
-
         $users = $this->customerFactory->create();
         $resultUsers = [];
         foreach ($users as $user) {
@@ -146,6 +145,5 @@ class CLIMenger
             ];
         }
         return $resultUsers;
-
     }
 }
