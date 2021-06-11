@@ -5,17 +5,17 @@
         <column name="title" xsi:type="text"/>
         <column name="created_at" xsi:type="date"/>
         <column name="updated_at" xsi:type="date"/>
-        <column name="product_id" xsi:type="int"/>
+        <column name="product_id" xsi:type="int" unsigned="true" nullable="false"/>
         <column name="status" xsi:type="int"/>
         <column name="description" xsi:type="text"/>
         <constraint xsi:type="foreign" referenceId="MDG_ENTITY_PRODUCT_ID_TO_CATALOG_PRODUCT_ENTITY_ENTITY_ID"
                     table="mdg_entity" column="product_id" referenceTable="catalog_product_entity"
                     referenceColumn="entity_id"
                     onDelete="NO ACTION"/>
-        <index referenceId="NEWSLETTER_SUBSCRIBER_CUSTOMER_ID" indexType="FULLTEXT">
+        <index referenceId="mdg_entity_description" indexType="fulltext">
             <column name="description"/>
         </index>
-        <index referenceId="NEWSLETTER_SUBSCRIBER_CUSTOMER_ID" indexType="FULLTEXT">
+        <index referenceId="entity_id_title" indexType="fulltext">
             <column name="title"/>
         </index>
     </table>

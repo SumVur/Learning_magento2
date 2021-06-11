@@ -1,0 +1,28 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Learning_TenthTask::MDG"
+             title="MDG"
+             translate="title"
+             module="Learning_TenthTask"
+             sortOrder="15"
+             dependsOnModule="Learning_TenthTask"
+             resource="Learning_TenthTask::MDG"/>
+
+        <add id="Learning_TenthTask::MDG_operation"
+             title="Operations"
+             translate="title"
+             module="Learning_TenthTask"
+             sortOrder="10"
+             parent="Learning_TenthTask::MDG"
+             resource="Learning_TenthTask::MDG_operation" />
+
+        <add id="Learning_TenthTask::Manage_Entities"
+             title="Manage Entities "
+             translate="title"
+             module="Learning_TenthTask"
+             sortOrder="10"
+             parent="Learning_TenthTask::MDG_operation"
+             action="tenthtask/entities/index"
+             resource="Learning_TenthTask::Manage_Entities"/>
+    </menu>
+</config>
