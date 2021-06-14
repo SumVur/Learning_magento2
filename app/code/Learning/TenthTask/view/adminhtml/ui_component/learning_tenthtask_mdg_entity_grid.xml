@@ -70,7 +70,7 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="customer/index/inlineEdit"/>
+                    <item name="saveUrl" xsi:type="url" path="tenthtask/index/inlineEdit"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">entity_id</param>
@@ -153,6 +153,7 @@
                 <editor>
                     <editorType>select</editorType>
                 </editor>
+                <options class="Magento\Catalog\Model\Product\Attribute\Source\Status"/>
                 <dataType>select</dataType>
                 <label translate="true">Status</label>
                 <visible>false</visible>

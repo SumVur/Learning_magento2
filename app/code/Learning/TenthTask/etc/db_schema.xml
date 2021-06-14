@@ -19,4 +19,5 @@
             <column name="title"/>
         </index>
     </table>
+
 </schema>
