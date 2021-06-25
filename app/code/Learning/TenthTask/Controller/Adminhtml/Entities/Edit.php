@@ -2,7 +2,7 @@
 namespace Learning\TenthTask\Controller\Adminhtml\Entities;
 
 
-class Index extends \Magento\Backend\App\Action
+class Edit extends \Magento\Backend\App\Action
 {
     const ADMIN_RESOURCE = 'Learning_TenthTask::Manage_Entities';
 
@@ -20,7 +20,7 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('MdgEntity')));
+        $resultPage->getConfig()->getTitle()->prepend((__('MdgEntity Edit')));
         return $resultPage;
     }
 }

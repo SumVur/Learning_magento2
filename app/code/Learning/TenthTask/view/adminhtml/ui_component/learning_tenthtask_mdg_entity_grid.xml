@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -5,14 +7,14 @@
             <item name="deps" xsi:type="string">learning_tenthtask_mdg_entity_grid.learning_tenthtask_mdg_entity_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">spinner_columns</item>
-<!--        <item name="buttons" xsi:type="array">-->
-<!--            <item name="add" xsi:type="array">-->
-<!--                <item name="name" xsi:type="string">add</item>-->
-<!--                <item name="label" xsi:type="string" translate="true">Add New entity</item>-->
-<!--                <item name="class" xsi:type="string">primary</item>-->
-<!--                <item name="url" xsi:type="string">*/*/new</item>-->
-<!--            </item>-->
-<!--        </item>-->
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New entity</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">tenthtask/entities/edit</item>
+            </item>
+        </item>
     </argument>
     <dataSource name="mdg_entity_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -53,7 +55,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="mageplaza_helloworld/post/massDelete"/>
+                        <item name="url" xsi:type="url" path="tenthtask/index/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete Post</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>

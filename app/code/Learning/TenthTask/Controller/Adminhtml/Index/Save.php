@@ -22,7 +22,7 @@ use Magento\Framework\Controller\Result\JsonFactory as JsonFactoryAlias;
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class InlineEdit extends Action implements HttpPostActionInterface
+class Save extends Action implements HttpPostActionInterface
 {
     /**
      * @var JsonFactoryAlias
@@ -47,6 +47,7 @@ class InlineEdit extends Action implements HttpPostActionInterface
 
     public function execute()
     {
+        die("ss");
         /** @var Json $resultJson */
         $resultJson = $this->resultJsonFactory->create();
 
@@ -76,6 +77,6 @@ class InlineEdit extends Action implements HttpPostActionInterface
         $model->setTitle($postItems[MdgEntityInterface::title]);
         $model->setStatus($postItems[MdgEntityInterface::status]);
         $model->setDescription($postItems[MdgEntityInterface::description]);
-         return $this->MdgEntityRepository->save($model);
+        return $this->MdgEntityRepository->save($model);
     }
 }

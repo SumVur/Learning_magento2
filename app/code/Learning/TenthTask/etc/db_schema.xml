@@ -1,13 +1,16 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="mdg_entity">
-        <column name="entity_id" xsi:type="int"/>
+        <column name="entity_id" xsi:type="int" padding="11" unsigned="false" nullable="false" identity="true"/>
         <column name="title" xsi:type="text"/>
         <column name="created_at" xsi:type="date"/>
         <column name="updated_at" xsi:type="date"/>
         <column name="product_id" xsi:type="int" unsigned="true" nullable="false"/>
         <column name="status" xsi:type="int"/>
         <column name="description" xsi:type="text"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
         <constraint xsi:type="foreign" referenceId="MDG_ENTITY_PRODUCT_ID_TO_CATALOG_PRODUCT_ENTITY_ENTITY_ID"
                     table="mdg_entity" column="product_id" referenceTable="catalog_product_entity"
                     referenceColumn="entity_id"
