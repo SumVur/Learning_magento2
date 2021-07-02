@@ -15,7 +15,7 @@ class OurLayoutProcessor implements LayoutProcessorInterface
     public function process($jsLayout)
     {
         //%path_to_target_node% is the path to the component's node in checkout_index_index.
-        unset($jsLayout['components']['checkout']['children']['steps']['my-new-step']);
+        unset($jsLayout['components']['checkout']['children']['steps']['children']['my-new-step']);
         return $jsLayout;
     }
 }
