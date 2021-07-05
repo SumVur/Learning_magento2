@@ -3,7 +3,7 @@
     <type name="Magento\Checkout\Block\Onepage">
         <arguments>
             <argument name="layoutProcessors" xsi:type="array">
-                <item name="hdgfh" xsi:type="object">Learning\EleventhTask\Block\Checkout\OurLayoutProcessor</item>
+                <item name="OurLayoutProcessor" xsi:type="object">Learning\EleventhTask\Block\Checkout\OurLayoutProcessor</item>
             </argument>
         </arguments>
     </type>

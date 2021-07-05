@@ -12,7 +12,7 @@ define([
      */
     return Component.extend({
         defaults: {
-            template: 'Learning_EleventhTask/view/frontend/web/template/mystep'
+            template: 'Learning_EleventhTask/mystep'
         },
 
         // add here your logic to display step,
