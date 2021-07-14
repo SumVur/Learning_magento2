@@ -85,4 +85,9 @@ class MdgEntity extends \Magento\Framework\Model\AbstractModel implements \Learn
     {
         $this->setData(Self::description,$description);
     }
+
+    public function setProductId($productId)
+    {
+        $this->setData(Self::productId,$productId);
+    }
 }

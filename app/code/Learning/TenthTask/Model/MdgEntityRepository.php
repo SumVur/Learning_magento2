@@ -16,7 +16,7 @@ class MdgEntityRepository implements \Learning\TenthTask\Api\MdgEntityRepository
     private \Learning\TenthTask\Model\MdgEntityFactory $MdgEntityFactory;
 
     /**
-     * @var ResourceModel\MdgEntity
+     * @var ResourceModel\ChangeName
      */
     private $resource;
 

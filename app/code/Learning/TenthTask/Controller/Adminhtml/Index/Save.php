@@ -47,7 +47,6 @@ class Save extends Action implements HttpPostActionInterface
 
     public function execute()
     {
-        die("ss");
         /** @var Json $resultJson */
         $resultJson = $this->resultJsonFactory->create();
 

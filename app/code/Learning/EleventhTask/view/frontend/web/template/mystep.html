@@ -4,14 +4,24 @@
          class="step-content"
          data-role="content">
 
-        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
-            <div class="actions-toolbar">
-                <div class="primary">
-                    <button data-role="opc-continue" type="submit" class="button action continue primary">
-                        <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
-                    </button>
-                </div>
-            </div>
+        <form data-bind="submit: navigateToNextStep" >
+            <label>First Name</label>
+            <input type="text" id="FirstName" name="Fname" required
+                   size="10" data-bind="textInput: FirstName"/>
+
+            <label>Last Name</label>
+            <input type="text" id="LastName" name="Lname" required
+                   size="10" data-bind="textInput: LastName"/>
+
+            <label>Emaile</label>
+            <input type="email" id="Email" name="Emaile" required
+                   size="10" data-bind="textInput: Email"/>
+
+            <label>Password</label>
+            <input type="text" id="Password" name="Password" required
+                   size="10" data-bind="textInput: Password"
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"/>
+            <input data-role="opc-continue" type="submit" class="button action continue primary"/>
         </form>
     </div>
 </li>

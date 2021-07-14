@@ -1,0 +1,11 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="product_change_title">
+        <column name="product_id" xsi:type="int" padding="11" unsigned="false" nullable="false" identity="true"/>
+        <column name="title" xsi:type="text"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="product_id"/>
+        </constraint>
+    </table>
+
+</schema>

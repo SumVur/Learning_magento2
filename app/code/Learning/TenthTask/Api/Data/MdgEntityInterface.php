@@ -37,4 +37,6 @@ interface MdgEntityInterface extends \Magento\Framework\DataObject\IdentityInter
 
     public function setDescription($description);
 
+    public function setProductId($productId);
+
 }
